@@ -5,14 +5,16 @@
 class Calculator
 {
 
-public:
+private:
 
 	double num1;
 	double num2;	
 
+public:
+
+
 	bool set_num1(double num1) {                  // метод проверяющий num1 не равен 0.
 		if (num1 == 0) {
-			std::cout << "\nНе верный ввод!\n";
 			return false;
 		}
 		else { 
@@ -22,7 +24,6 @@ public:
 	}
 	bool set_num2(double num2) {                   // метод проверяющий num2 не равен 0.
 		if (num2 == 0) {
-			std::cout << "\nНе верный ввод!\n";
 			return false;
 		}
 		else{ 
@@ -32,29 +33,29 @@ public:
 	}
 	
 	// методы вычислений
-	double add() {
-		std::cout << "num1 + num2 = " << num1 + num2 << "\n";
-		return 0;
+	double add(double summ) {
+		summ = num1 + num2;
+		return summ;
 	}
-	double multiply() {
-		std::cout << "num1 * num2 = " << num1 * num2 << "\n";
-		return 0;
+	double multiply(double multi) {
+		multi = num1 * num2;
+		return multi;
 	}
-	double subtract_1_2() {
-		std::cout << "num1 - num2 = " << num1 - num2 << "\n";
-		return 0;
+	double subtract_1_2(double sub1) {
+		sub1 = num1 - num2;
+		return sub1;
 	}
-	double subtract_2_1() {
-		std::cout << "num2 - num1 = " << num2 - num1 << "\n";
-		return 0;
+	double subtract_2_1(double sub2) {
+		sub2 = num2 - num1;
+		return sub2;
 	}
-	double divide_1_2() {
-		std::cout << "num1 / num2 = " << num1 / num2 << "\n";
-		return 0;
+	double divide_1_2(double div1) {
+		div1 = num1 / num2;
+		return div1;
 	}
-	double divide_2_1() {
-		std::cout << "num2 / num1 = " << num2 / num1 << "\n";
-		return 0;
+	double divide_2_1(double div2) {
+		div2 = num2 / num1;
+		return div2;
 	}
 };
 
@@ -63,28 +64,43 @@ int main() {
 
 	setlocale(LC_ALL, "Russian");
 
+	double summ = 0;
+	double multi = 0;
+	double sub1 = 0;
+	double sub2 = 0;
+	double div1 = 0;
+	double div2 = 0;
+
 	Calculator p;                                  // экземпляр р класса Calculator
 
 	while (true)
 	{
-
 	double num1, num2;
+	bool q;
+
 	do {
 		std::cout << "Введите num1: " << std::endl;
 		std::cin >> num1;
-	} while (!p.set_num1(num1));
+		q = p.set_num1(num1);
+		if (q == false) { std::cout << "Не верный ввод!" << std::endl; }
+	} while (!q);
 	
 	do {
 		std::cout << "Введите num2: " << std::endl;
 		std::cin >> num2;
+		q = p.set_num2(num2);
+		if (q == false) { std::cout << "Не верный ввод!" << std::endl; }
 	} while (!p.set_num2(num2));
 	
-	p.add();
-	p.multiply();
-	p.subtract_1_2();
-	p.subtract_2_1();
-	p.divide_1_2();
-	p.divide_2_1();
+	
+	std::cout << "num1 + num2 = " << p.add(summ) << std::endl;
+	std::cout << "num1 * num2 = " << p.multiply(multi) << std::endl;
+	std::cout << "num1 - num2 = " << p.subtract_1_2(sub1) << std::endl;
+	std::cout << "num2 - num1 = " << p.subtract_2_1(sub2) << std::endl;
+	std::cout << "num1 / num2 = " << p.divide_1_2(div2) << std::endl;
+	std::cout << "num2 / num1 = " << p.divide_2_1(div2) << std::endl;
+
 	}
+
 	return 0;
 }
