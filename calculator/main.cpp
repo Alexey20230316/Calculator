@@ -64,12 +64,6 @@ int main() {
 
 	setlocale(LC_ALL, "Russian");
 
-	double summ = 0;
-	double multi = 0;
-	double sub1 = 0;
-	double sub2 = 0;
-	double div1 = 0;
-	double div2 = 0;
 
 	Calculator p;                                  // экземпляр р класса Calculator
 
