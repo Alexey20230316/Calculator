@@ -33,28 +33,28 @@ public:
 	}
 	
 	// методы вычислений
-	double add(double summ) {
-		summ = num1 + num2;
+	double add() {
+		double summ = num1 + num2;
 		return summ;
 	}
-	double multiply(double multi) {
-		multi = num1 * num2;
+	double multiply() {
+		double multi = num1 * num2;
 		return multi;
 	}
-	double subtract_1_2(double sub1) {
-		sub1 = num1 - num2;
+	double subtract_1_2() {
+		double sub1 = num1 - num2;
 		return sub1;
 	}
-	double subtract_2_1(double sub2) {
-		sub2 = num2 - num1;
+	double subtract_2_1() {
+		double sub2 = num2 - num1;
 		return sub2;
 	}
-	double divide_1_2(double div1) {
-		div1 = num1 / num2;
+	double divide_1_2() {
+		double div1 = num1 / num2;
 		return div1;
 	}
-	double divide_2_1(double div2) {
-		div2 = num2 / num1;
+	double divide_2_1() {
+		double div2 = num2 / num1;
 		return div2;
 	}
 };
@@ -93,12 +93,12 @@ int main() {
 	} while (!p.set_num2(num2));
 	
 	
-	std::cout << "num1 + num2 = " << p.add(summ) << std::endl;
-	std::cout << "num1 * num2 = " << p.multiply(multi) << std::endl;
-	std::cout << "num1 - num2 = " << p.subtract_1_2(sub1) << std::endl;
-	std::cout << "num2 - num1 = " << p.subtract_2_1(sub2) << std::endl;
-	std::cout << "num1 / num2 = " << p.divide_1_2(div2) << std::endl;
-	std::cout << "num2 / num1 = " << p.divide_2_1(div2) << std::endl;
+	std::cout << "num1 + num2 = " << p.add() << std::endl;
+	std::cout << "num1 * num2 = " << p.multiply() << std::endl;
+	std::cout << "num1 - num2 = " << p.subtract_1_2() << std::endl;
+	std::cout << "num2 - num1 = " << p.subtract_2_1() << std::endl;
+	std::cout << "num1 / num2 = " << p.divide_1_2() << std::endl;
+	std::cout << "num2 / num1 = " << p.divide_2_1() << std::endl;
 
 	}
 
